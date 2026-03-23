@@ -1,0 +1,9 @@
+[build]
+builder = "dockerfile"
+dockerfilePath = "cropeye-apis-main/Dockerfile"
+
+[deploy]
+startCommand = "python events.py"
+healthcheckPath = "/health"
+healthcheckTimeout = 300
+restartPolicyType = "on_failure"
